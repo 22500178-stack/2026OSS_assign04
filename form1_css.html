@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Form CSS 적용 - Checkout</title>
+    <style>
+        /* 1. 전체 배경 및 기본 폰트 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f5f7;
+            padding: 20px;
+            color: #333;
+        }
+
+        /* 2. Form 영역 꾸미기 */
+        form {
+            max-width: 550px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 25px;
+            border: 1px solid #cccccc;
+            border-radius: 8px;
+        }
+
+        /* 3. Fieldset & Legend */
+        fieldset {
+            border: 1px solid #dddddd;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #fafafa;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #0d6efd;
+            padding: 0 5px;
+        }
+
+        /* 4. Label 스타일 */
+        label {
+            font-weight: bold;
+            font-size: 14px;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        /* 5. Input, Select, Textarea 공통 스타일 */
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px 10px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* 크기 어긋남 방지 */
+            font-size: 14px;
+        }
+
+        /* 6. Focus 상태 (클릭했을 때 테두리 색상 변경) */
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #0d6efd;
+            background-color: #f0f7ff;
+            outline: none;
+        }
+
+        /* 7. Button 제출 버튼 스타일 */
+        input[type="submit"] {
+            width: 100%;
+            background-color: #0d6efd;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* 8. Hover 상태 (마우스 올렸을 때) */
+        input[type="submit"]:hover {
+            background-color: #0b5ed7;
+        }
+
+        /* 9. 일반 버튼 (Redeem) */
+        button {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #5a6268;
+        }
+
+        /* 10. 체크박스, 라디오버튼 간격 조정 */
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 원본 URL: https://getbootstrap.com/docs/5.2/examples/checkout/ -->
+
+    <h2 style="text-align: center;">Checkout form</h2>
+    <p style="text-align: center; color: #666;">Below is an example form built entirely with Bootstrap's form controls.</p>
+
+    <form action="#" method="post">
+
+        <!-- 청구지 주소 정보 -->
+        <fieldset>
+            <legend>Billing address</legend>
+
+            <label for="firstName">First name</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="lastName">Last name</label>
+            <input type="text" id="lastName" name="lastName" required>
+
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="@Username" required>
+
+            <label for="email">Email (Optional)</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com">
+
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" placeholder="1234 Main St" required>
+
+            <label for="address2">Address 2 (Optional)</label>
+            <input type="text" id="address2" name="address2" placeholder="Apartment or suite">
+
+            <label for="country">Country</label>
+            <select id="country" name="country">
+                <option value="">Choose...</option>
+                <option value="US" selected>United States</option>
+            </select>
+
+            <label for="state">State</label>
+            <select id="state" name="state">
+                <option value="">Choose...</option>
+                <option value="CA">California</option>
+            </select>
+
+            <label for="zip">Zip</label>
+            <input type="text" id="zip" name="zip">
+
+            <label for="delivery">배송 요청사항:</label>
+            <input type="text" id="delivery" name="delivery" list="delivery-list" placeholder="요청사항을 선택하세요">
+            <datalist id="delivery-list">
+                <option value="문 앞에 놓아주세요">
+                <option value="배송 전 연락주세요">
+                <option value="경비실에 맡겨주세요">
+            </datalist>
+
+            <div style="margin-top: 10px;">
+                <input type="checkbox" id="same-address">
+                <label for="same-address" style="font-weight: normal;">Shipping address is the same as my billing address</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="save-info">
+                <label for="save-info" style="font-weight: normal;">Save this information for next time</label>
+            </div>
+        </fieldset>
+
+        <!-- 결제 정보 -->
+        <fieldset>
+            <legend>Payment</legend>
+
+            <input type="radio" id="credit" name="payment" value="credit" checked>
+            <label for="credit" style="font-weight: normal; margin-right: 10px;">Credit card</label>
+
+            <input type="radio" id="debit" name="payment" value="debit">
+            <label for="debit" style="font-weight: normal; margin-right: 10px;">Debit card</label>
+
+            <input type="radio" id="paypal" name="payment" value="paypal">
+            <label for="paypal" style="font-weight: normal;">PayPal</label>
+
+            <br><br>
+
+            <label for="cc-name">Name on card</label>
+            <input type="text" id="cc-name" name="ccName">
+
+            <label for="cc-number">Credit card number</label>
+            <input type="text" id="cc-number" name="ccNumber">
+
+            <label for="expiration">Expiration</label>
+            <input type="text" id="expiration" name="expiration">
+
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" name="cvv">
+
+            <label for="theme">카드 강조 색상 선택:</label>
+            <input type="color" id="theme" name="theme" value="#0d6efd">
+        </fieldset>
+
+        <!-- 추가 메모 -->
+        <label for="memo">Order Memo (요청사항)</label>
+        <textarea id="memo" name="memo" rows="3" placeholder="기타 전달사항을 입력하세요."></textarea>
+
+        <br><br>
+
+        <input type="submit" value="Continue to checkout">
+    </form>
+</body>
+</html>
