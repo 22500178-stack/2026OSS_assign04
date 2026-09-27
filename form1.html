@@ -34,13 +34,28 @@
 
         <input type="radio">male
         <input type="radio">female<br><br>
+
+        <label for="interest">관심 분야 (직접 입력 또는 선택):</label><br>
+        <input type="text" id="interest" name="interest" list="interest-list" placeholder="분야를 선택하거나 입력하세요">
+        
+        <datalist id="interest-list">
+            <option value="프론트엔드 개발">
+            <option value="백엔드 개발">
+            <option value="인공지능 / AI">
+            <option value="UI/UX 디자인">
+        </datalist>
+        <br><br>
         </fieldset><br>
 
         <textarea clos="30" rows="10"></textarea><br>
 
         <input type="checkbox">Save this information for next time<br><br>
 
-    
+        
+        <label for="theme-color">색상 선택:</label>
+        <input type="color" name="color" value="#ff0000">
+        <br>
+        <br>
         <input type="submit" value="Submit">
     </form>
 
