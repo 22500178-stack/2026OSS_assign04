@@ -1,20 +1,49 @@
 <!DOCTYPE html>
 <html>
+
 <body>
 
-<h2>HTML Forms</h2>
+    <h2>HTML Forms</h2>
 
-<p>사용자 정보 입력</p>
+    <p>사용자 정보 입력</p>
 
-<form action="form_ok.php" method="post">
-  <label for="uname">이름:</label><br>
-  <input type="text" id="uname" name="uname" placeholder="이름을 입력"><br>
-  
-  <label for="email">이메일:</label><br>
-  <input type="text" id="email" name="email"><br><br>
-  
-  <input type="submit" value="Submit">
-</form>
+    <form action="form_ok.html" method="post">
+
+        <fieldset>
+            <legend>이름과 이메일</legend>
+        <label for="uname">FirstName</label><br>
+        <input type="text" id="uname" name="uname" placeholder="이름을 입력"><br>
+        <label for="uname">LastName</label><br>
+        <input type="text" id="uname" name="uname" placeholder="이름을 입력"><br><br>
+
+        <label for="email">Email</label><br>
+        <input type="text" id="email" name="email"><br><br>
+          </fieldset><br>
+
+        <fieldset>
+            <legend>정보</legend>
+        <label for="생년월일">생년월일</label><br>
+        <input type="date"><br><br>
+
+        <label for="Country">Country</label><br>
+        <select>
+            <option>Republic of Korea
+            <option>Japan
+            <option>China
+        </select><br><br>
+
+        <input type="radio">male
+        <input type="radio">female<br><br>
+        </fieldset><br>
+
+        <textarea clos="30" rows="10"></textarea><br>
+
+        <input type="checkbox">Save this information for next time<br><br>
+
+    
+        <input type="submit" value="Submit">
+    </form>
 
 </body>
+
 </html>
